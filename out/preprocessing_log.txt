@@ -1,0 +1,18 @@
+0 load raw                                     10634 ->  10634  
+1 drop missing title/node_id                   10634 ->  10624  
+2 drop duplicate (path,node_id)                10624 ->  10563  
+3 drop alias path r-programming                10563 ->  10434  duplicate of 'r'
+4 drop description < 40 chars                  10434 ->  10405  
+5 impute missing topic_slug from title         10405 ->  10405  18 imputed
+6 assign canonical skill_id                    10405 ->  10405  336 rows share a skill_id across paths
+7 parse resources to long table                10405 ->  23725  resource rows
+8-9 build pairs + grouped split (seed 42)      10405 ->  10405  groups=8206 {'train': 8317, 'test': 1082, 'val': 1006}
+
+paths=91 role=34 skill=57
+unique skills=10228 nodes=10405
+nodes with 0 resources=982
+resource types={'articles': 11437, 'official_docs': 6348, 'videos': 5132, 'opensource': 452, 'courses': 356}
+top domains={'youtube.com': 4998, 'medium.com': 669, 'github.com': 502, 'learn.microsoft.com': 381, 'developer.mozilla.org': 362}
+youtube share=21.9%
+desc chars median=400
+nodes per path min/median/max=5/112/301
